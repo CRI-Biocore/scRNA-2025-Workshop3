@@ -51,9 +51,9 @@ It captures thousands to tens of thousands of individual cells per run, isolatin
 
 **Key Concepts:**
 
-- 🧪 **GEMs (Gel Beads-in-Emulsion):** Each droplet contains one cell and one barcoded bead.
-- 🧬 **Cell Barcodes:** Identify which cell each transcript came from.
-- 🔁 **UMIs (Unique Molecular Identifiers):** Help quantify gene expression by correcting for PCR duplicates.
+- 🧪 ** GEMs (Gel Beads-in-Emulsion):** Each droplet contains one cell and one barcoded bead.
+- 🧬 ** Cell Barcodes:** Identify which cell each transcript came from.
+- 🔁 ** UMIs (Unique Molecular Identifiers):** Help quantify gene expression by correcting for PCR duplicates.
 - 🎯 Supports both **3' and 5' gene expression profiling**.
 
 ---
@@ -66,7 +66,7 @@ It captures thousands to tens of thousands of individual cells per run, isolatin
 4. **Library Construction:** Amplification and preparation for Illumina
 
 
-### 3. **[biocore scRNA-seq Data Analysis Workflow]**
+### 3. **biocore scRNA-seq Data Analysis Workflow**
 
 This section outlines the complete computational pipeline used by the CRI Bioinformatics Core 
 for single-cell RNA-seq analysis—from raw sequencing data to downstream interpretation and visualization.
@@ -74,24 +74,115 @@ for single-cell RNA-seq analysis—from raw sequencing data to downstream interp
 ![](./images/scRNA-biocore-workflow.png)
 
 
-### 4. **[Data Preprocessing with cellRanger](./docs/03-cellranger.md)**
-   + Aligning reads, demultiplexing barcodes, and generating feature-barcode matrices from raw sequencing data.
+### 4. **Cell Ranger Overview for Single-Cell RNA-seq Data Pre-processing**
 
-### 5. **[Quality Control and Filtering Using Seurat](./docs/04-qc-seurat.md)**  
-   + Identifying low-quality cells and applying standard filtering criteria
+To begin single-cell RNA-seq data analysis using the 10x Genomics platform, raw sequencing data 
+must first be processed with **Cell Ranger**, a comprehensive software suite developed by 10x Genomics. 
+After installing Cell Ranger, users must also download the appropriate **reference transcriptome package**, 
+which is essential for aligning reads and assigning them to annotated genes. To run Cell Ranger successfully, 
+both the **software** and the appropriate **reference genome** must be installed on your system.
 
-### 6. **[Detecting Doublets with DoubletDecon](./docs/05-doublets.md)** 
-   + Identifying and removing artificial cell doublets/multiplets to improve data fidelity
+- For instructions on **installing Cell Ranger**, refer to the **[installation guide](./docs/03-cellranger-installation.md)**.
+- For details on **downloading and setting up reference genome files**, see the **[reference genome setup guide](./docs/03-cellranger-refGenome.md)**.
 
-### 7. **[Data Normalization and Integration](./docs/06-normalization-integration.md)**  
-   + Seurat-based normalization and integration across samples or conditions
+Additionally, cell Ranger offers a collection of tools designed for various stages of data processing and analysis:
 
-### 8. **[Clustering and Cell Type Identification](./docs/07-clustering.md)**  
-   + Performing unsupervised clustering and assigning putative cell identities based on marker gene expression
+- **`cellranger mkfastq`** – Converts raw Illumina BCL files into sample-specific FASTQ files.
+- **`cellranger count`** – Performs read alignment, barcode and UMI filtering, and quantifies gene expression to generate the gene-barcode matrix for individual samples.
+- **`cellranger aggr`** – Aggregates multiple `count` outputs into a single dataset, normalizing for sequencing depth across samples.
+- **`cellranger vdj`** – Assembles full-length T-cell receptor (TCR) or B-cell receptor (BCR) sequences from 5′ immune profiling libraries.
+- **`cellranger reanalyze`** – Conducts secondary analyses such as dimensionality reduction, clustering, and gene filtering on existing `count` data.
+- **`cellranger targeted-compare`** – Compares results from targeted gene expression libraries against whole transcriptome datasets.
 
-### 9. **[Visualization with UMAP/TSNE](./docs/08-umap.md)**  
+In this workflow, we primarily focus on **`cellranger count`**, which serves as 
+the foundational step for converting raw sequencing reads into interpretable, cell-level gene expression matrices 
+used in downstream analyses such as clustering, differential expression, and cell type annotation. 
+For a step-by-step walkthrough of running **`cellranger count`**, visit the **[execution guide](./docs/03-cellranger-count.md)**.
+
+### 5. **Seurat Object Construction and Quality Control from Cell Ranger Outputs**  
+
+After processing raw sequencing data using the `cellranger count` pipeline, 
+the resulting filtered feature-barcode matrix can be imported into R using the **Seurat** package 
+to construct Seurat objects for downstream single-cell RNA-seq analysis.
+
+This section covers the following key steps:
+
+1. Building a Seurat object from Cell Ranger outputs
+2. Calculating mitochondrial gene content
+3. Filtering low-quality cells based on gene and UMI thresholds
+4. Visualizing quality control metrics
+
+The detailed execution guide for these steps is provided in this [processing document](./04-qc-seurat.md).
+
+### 6. **Detecting Doublets with DoubletDecon** 
+
+Doublets or multiplets—instances where two or more cells are captured within a single droplet—can confound 
+single-cell RNA-seq analysis by producing hybrid gene expression profiles. 
+Detecting and removing these artifacts is essential for ensuring the accuracy of downstream analyses 
+such as clustering, differential expression, and lineage inference.
+
+This section demonstrates how to use the **DoubletDecon** R package to 
+identify and filter doublets through both **centroid** and **medoid-based** detection strategies. 
+The results from both methods can be used to update the Seurat object by adding a doublet metadata 
+column and subsetting only the high-confidence singlet cells for further analysis.
+
+The execution code for this step is detailed in the [05-doublets.md](./docs/05-doublets.md) file.
+
+### 7. **Seurat Object Normalization and Multi-Sample Integration**  
+
+After performing initial filtering and quality control on each sample, 
+the next step is to normalize the gene expression data and prepare for integration across multiple samples. 
+This ensures that biological signals are retained while minimizing batch effects or technical variation between samples.
+
+This section describes two main processes:
+1. **Normalization and Feature Selection** for individual samples using Seurat’s standard single-cell analysis pipeline.
+2. **Integration of Multiple Samples** using anchor-based integration, which aligns shared cell types across datasets.
+
+These steps enable downstream analyses such as clustering, differential expression, 
+and trajectory inference across combined datasets. The execution code is accessible at [06-normalization-integration.md](./docs/06-normalization-integration.md)
+
+
+### 8. **Clustering and Cell Type Identification**  
+
+Following data integration, the next phase involves unsupervised clustering 
+to group cells with similar gene expression patterns. This step is critical for 
+identifying distinct cell populations and forms the basis for downstream tasks 
+such as marker gene analysis and cell type annotation.
+
+In this section, we will:
+
+1. Scale the integrated Seurat object to standardize expression values
+2. Apply Principal Component Analysis (PCA) for dimensionality reduction
+3. Construct a shared nearest neighbor graph and perform clustering
+4. Visualize the identified clusters using UMAP and t-SNE
+
+The complete execution steps and code can be found in the [07-clustering.md](./docs/07-clustering.md) document.
+
+
+### 9. **Visualization with UMAP/TSNE**  
    + Projecting high-dimensional scRNA-seq data into two dimensions for visual interpretation
 
-### 10. **[Differential Expression Analysis](./docs/09-de-analysis.md)**  
-   + Identifying marker genes and performing comparisons across clusters or conditions
 
+After clustering, visualizing high-dimensional single-cell RNA-seq data in two dimensions 
+helps to intuitively interpret cellular heterogeneity and population structure. 
+UMAP (Uniform Manifold Approximation and Projection) and t-SNE (t-distributed Stochastic Neighbor Embedding) 
+are two commonly used nonlinear dimensionality reduction techniques for this purpose. 
+They project cells into a 2D space based on their gene expression profiles, 
+allowing easy identification of distinct clusters, gradients, and outliers. 
+This section demonstrates how to generate UMAP and t-SNE plots to aid in exploratory data analysis and presentation.  
+
+The corresponding code for this step is provided in [08-umap.md](./08-umap.md).
+
+### 10. **Differential Expression Analysis**  
+
+Differential expression (DE) analysis allows for the identification of genes 
+that are differentially expressed between clusters, experimental conditions, or cell types. 
+This step is crucial for understanding the molecular mechanisms that differentiate cell populations and 
+for identifying marker genes associated with specific biological states. 
+By comparing gene expression across clusters or conditions, DE analysis helps reveal key biomarkers, 
+pathways, and cellular functions of interest. 
+
+The execution code for performing DE analysis is available at [09-de-analysis.md](./docs/09-de-analysis.md), 
+which guides you through identifying marker genes and performing comparisons across different groups in your dataset.
+
+   
