@@ -82,8 +82,8 @@ After installing Cell Ranger, users must also download the appropriate **referen
 which is essential for aligning reads and assigning them to annotated genes. To run Cell Ranger successfully, 
 both the **software** and the appropriate **reference genome** must be installed on your system.
 
-- For instructions on **installing Cell Ranger**, refer to the **[installation guide](./docs/03-cellranger-installation.md)**.
-- For details on **downloading and setting up reference genome files**, see the **[reference genome setup guide](./docs/03-cellranger-refGenome.md)**.
+- For instructions on **installing Cell Ranger**, refer to the **[installation guide](./docs/01-cellranger-installation.md)**.
+- For details on **downloading and setting up reference genome files**, see the **[reference genome setup guide](./docs/02-cellranger-refGenome.md)**.
 
 Additionally, cell Ranger offers a collection of tools designed for various stages of data processing and analysis:
 
@@ -112,7 +112,7 @@ This section covers the following key steps:
 3. Filtering low-quality cells based on gene and UMI thresholds
 4. Visualizing quality control metrics
 
-The detailed execution guide for these steps is provided in this [processing document](./04-qc-seurat.md).
+The detailed execution guide for these steps is provided in this [processing document](./docs/04-qc-seurat.md).
 
 ### 6. **Detecting Doublets with DoubletDecon** 
 
@@ -171,7 +171,7 @@ They project cells into a 2D space based on their gene expression profiles,
 allowing easy identification of distinct clusters, gradients, and outliers. 
 This section demonstrates how to generate UMAP and t-SNE plots to aid in exploratory data analysis and presentation.  
 
-The corresponding code for this step is provided in [08-umap.md](./08-umap.md).
+The corresponding code for this step is provided in [08-umap.md](./docs/08-umap.md).
 
 ### 10. **Differential Expression Analysis**  
 
