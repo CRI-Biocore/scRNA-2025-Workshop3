@@ -142,7 +142,7 @@ For a step-by-step walk through of running **`cellranger count`**, visit the **[
 ### 5. **Seurat Object Construction and Quality Control from Cell Ranger Outputs**  
 
 After processing raw sequencing data using the `cellranger count` pipeline, 
-the resulting filtered feature-barcode matrix can be imported into R using the **Seurat** package 
+the resulting **filtered feature-barcode matrix** can be imported into R using the **Seurat** package 
 to construct Seurat objects for downstream single-cell RNA-seq analysis.
 
 This section covers the following key steps:
@@ -152,7 +152,7 @@ This section covers the following key steps:
 3. Filtering low-quality cells based on gene and UMI thresholds
 4. Visualizing quality control metrics
 
-The detailed execution guide for these steps is provided in this [section 4: processing count document](./docs/04-qc-seurat.md).
+The detailed execution guide for these steps is provided in this [section 4: processing count matrix](./docs/04-qc-seurat.md).
 
 ---
 

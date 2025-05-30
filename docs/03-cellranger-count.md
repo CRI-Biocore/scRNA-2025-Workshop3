@@ -78,7 +78,7 @@ Then you can see the window as below:
 
 ![](./images/sbatch_submission.png)
 
-The processing of this dataset will take approximately 20 minutes to complete. 
+The processing of this dataset will take approximately **20 minutes** to complete. 
 Once the execution finishes, a results directory named `sampl1_ln1` will be created under the working directory `~/workshop_test`.
 
 The structure of the results directory is illustrated below:
