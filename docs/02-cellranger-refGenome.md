@@ -1,4 +1,4 @@
-## Cell Ranger Reference Genome Installation Guide
+## Section 2: Cell Ranger Reference Genome Installation Guide
 
 To enable read alignment and quantification, `cellranger` requires an appropriate reference genome file 
 to run `cell ranger` for `count` / `multi`. 
@@ -75,3 +75,4 @@ In this tutorial, all test data come from **human samples**, only the human refe
 it is accessible at `/gpfs/data/biocore-workshop/scRNA-seq_2025_workshop3/module_tools/refdata-gex-GRCh38-2024-A` 
 as shown in ![below screenshot](./images/human_ref_folder.png).
 
+---

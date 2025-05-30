@@ -92,8 +92,8 @@ both the **software** and the appropriate **reference genome** must be installed
 After installing Cell Ranger, users must also download the appropriate **reference transcriptome package**, 
 which is essential for aligning reads and assigning them to annotated genes. 
 
-- For step-by-step instructions on installing **installing Cell Ranger**, see the **[installation guide (01-cellranger-installation.md)](./docs/01-cellranger-installation.md)**.
-- For guidance on **downloading and configuring reference genome files**, refer to the **[reference genome setup guide (02-cellranger-refGenome.md)](./docs/02-cellranger-refGenome.md)**.
+- For step-by-step instructions on installing **installing Cell Ranger**, see the **[section 1: installation guide (01-cellranger-installation.md)](./docs/01-cellranger-installation.md)**.
+- For guidance on **downloading and configuring reference genome files**, refer to the **[section 2: reference genome setup guide (02-cellranger-refGenome.md)](./docs/02-cellranger-refGenome.md)**.
 
 Additionally, cell Ranger offers a collection of tools designed for various stages of data processing and analysis:
 
@@ -106,8 +106,36 @@ Additionally, cell Ranger offers a collection of tools designed for various stag
 
 In this workflow, we primarily focus on **`cellranger count`**, which serves as 
 the foundational step for converting raw sequencing reads into interpretable, cell-level gene expression matrices 
-used in downstream analyses such as clustering, differential expression, and cell type annotation. 
-For a step-by-step walkthrough of running **`cellranger count`**, visit the **[execution guide](./docs/03-cellranger-count.md)**.
+used in downstream analyses such as clustering, differential expression, and cell type annotation with seurat. 
+
+#### Workshop Test Dataset Overview
+
+The dataset provided for this workshop is organized under the `/gpfs/data/biocore-workshop/scRNA-seq_2025_workshop3/testData` directory, 
+it includes 2 test data files to support 2 different stages of the single-cell RNA-seq analysis workflow as shown in below ![](./images/testData_tree1.png)
+
+ - **`data1_cellranger_count`**: used to demonstrate how to run `cellranger count` for pre-processing.
+ 
+    This folder contains raw FASTQ files generated from a 10x Genomics run. 
+    These files serve as input for the `cellranger count` execution. 
+    The filenames follow the standard 10x format and include the sample identifier, sequencing lane, and read information:
+
+    *_I1_001.fastq.gz: Index reads
+
+    *_R1_001.fastq.gz: Read 1
+
+    *_R2_001.fastq.gz: Read 2
+  
+  - **`data2_seurat`**: used for seurat downstream analysis
+    
+    This directory contains output files that are either generated from `cellranger count` or formatted for direct input into Seurat:
+
+    3041A, 3041F: Output in uncompressed 10x Matrix format (barcodes.tsv, genes.tsv, matrix.mtx)
+
+    3396A, 3396F: Output in compressed format (*.tsv.gz, *.mtx.gz), following the newer 10x conventions using features.tsv.gz instead of genes.tsv
+
+    part2_demo.rds: A pre-processed RDS object for use in downstream Seurat tutorials or demonstrations
+
+For a step-by-step walk through of running **`cellranger count`**, visit the **[section 3: cellranger count execution guide](./docs/03-cellranger-count.md)**.
 
 ---
 
@@ -124,7 +152,7 @@ This section covers the following key steps:
 3. Filtering low-quality cells based on gene and UMI thresholds
 4. Visualizing quality control metrics
 
-The detailed execution guide for these steps is provided in this [processing document](./docs/04-qc-seurat.md).
+The detailed execution guide for these steps is provided in this [section 4: processing count document](./docs/04-qc-seurat.md).
 
 ---
 

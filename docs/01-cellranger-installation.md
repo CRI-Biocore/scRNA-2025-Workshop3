@@ -1,4 +1,4 @@
-# Cell Ranger Installation Guide
+# Section 1: Cell Ranger Installation Guide
 
 This guide provides step-by-step instructions for installing the **Cell Ranger** software suite, 
 developed by 10x Genomics, which is required for processing single-cell RNA-seq data.
@@ -32,12 +32,12 @@ wget -O cellranger-9.0.1.tar.gz "https://cf.10xgenomics.com/releases/cell-exp/ce
 tar -xzvf cellranger-9.0.1.tar.gz
 ```
 
+---
+
 ## 3. Set Up Environment for cellRanger
 
 After downloading and extracting Cell Ranger, you need to configure your system environment 
 so the `cellranger` command is recognized in any directory.
-
----
 
 ### Add Cell Ranger to your `PATH` or use the full path to call cell ranger
 
@@ -64,6 +64,8 @@ If the installation is successful, you should see output similar to:
 cellranger 9.0.1
 ```
 
+---
+
 ## 4. `randi HPC` installed `cell ranger`
 
 For our `Randi HPC`, the cell ranger path has been integrated into the path `/gpfs/data/biocore-workshop/scRNA-seq_2025_workshop3/module_tools/cellranger-9.0.1/`. 
@@ -76,3 +78,5 @@ You can access this configured cell ranger by calling it via full path using the
 
 Then you should see a screen similar to the one below:
 ![](./images/cellranger_version.png)
+
+---
