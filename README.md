@@ -12,6 +12,8 @@ Please share your feedback on topics you'd like to see covered, or any questions
 for our workshop learning series, either through [this survey link](https://mycri.cri.uchicago.edu/educations/trainings/77/survey/) 
 or by emailing me at yli22@bsd.uchicago.edu.
 
+---
+
 ### 1. High Performance Computing (HPC)
 
 CRI provides access to its high-performance computing (HPC) system, `randi`, for all registered participants in today's workshop training session. 
@@ -36,7 +38,6 @@ You are welcome to join the **CRI HPC Randi Slack user group** to ask questions 
 
 🔗 [Join the Slack Group](https://join.slack.com/t/criscientific-dzi9891/shared_invite/zt-2kghy4392-1ELPfgn8pL5BcXk4oF9D4g)
 
----
 
 🕒 Additionally we are offering **joint in-person office hours every Tuesday afternoon** at **Peck Pavilion N161**:
 
@@ -44,6 +45,8 @@ You are welcome to join the **CRI HPC Randi Slack user group** to ask questions 
   - **Bioinformatics Team:** 12:30 PM – 3:30 PM  
 
 Feel free to stop by with any questions — we are happy to help!
+
+---
 
 ### 2. Introduction to Single-Cell RNA Sequencing
 
@@ -59,8 +62,6 @@ It captures thousands to tens of thousands of individual cells per run, isolatin
 - 🔁 ** UMIs (Unique Molecular Identifiers):** Help quantify gene expression by correcting for PCR duplicates.
 - 🎯 Supports both **3' and 5' gene expression profiling**.
 
----
-
 #### 🧬 10x Genomics scRNA-seq Workflow
 
 1. **Sample Preparation:** Generate a single-cell suspension from tissue or culture.
@@ -68,6 +69,7 @@ It captures thousands to tens of thousands of individual cells per run, isolatin
 3. **Reverse Transcription:** Transcripts are barcoded and converted to cDNA inside droplets.
 4. **Library Construction:** Amplification and preparation for Illumina sequencing. 
 
+---
 
 ### 3. **biocore scRNA-seq Data Analysis Workflow**
 
@@ -77,6 +79,7 @@ downstream interpretation and visualization.
 
 ![](./images/scRNA-biocore-workflow.png)
 
+---
 
 ### 4. **Cell Ranger Overview for Single-Cell RNA-seq Data Pre-processing**
 
@@ -106,6 +109,8 @@ the foundational step for converting raw sequencing reads into interpretable, ce
 used in downstream analyses such as clustering, differential expression, and cell type annotation. 
 For a step-by-step walkthrough of running **`cellranger count`**, visit the **[execution guide](./docs/03-cellranger-count.md)**.
 
+---
+
 ### 5. **Seurat Object Construction and Quality Control from Cell Ranger Outputs**  
 
 After processing raw sequencing data using the `cellranger count` pipeline, 
@@ -121,6 +126,8 @@ This section covers the following key steps:
 
 The detailed execution guide for these steps is provided in this [processing document](./docs/04-qc-seurat.md).
 
+---
+
 ### 6. **Detecting Doublets with DoubletDecon** 
 
 Doublets or multiplets—instances where two or more cells are captured within a single droplet—can confound 
@@ -135,6 +142,8 @@ column and subsetting only the high-confidence singlet cells for further analysi
 
 The execution code for this step is detailed in the [05-doublets.md](./docs/05-doublets.md) file.
 
+---
+
 ### 7. **Seurat Object Normalization and Multi-Sample Integration**  
 
 After performing initial filtering and quality control on each sample, 
@@ -148,6 +157,7 @@ This section describes two main processes:
 These steps enable downstream analyses such as clustering, differential expression, 
 and trajectory inference across combined datasets. The execution code is accessible at [06-normalization-integration.md](./docs/06-normalization-integration.md)
 
+---
 
 ### 8. **Clustering and Cell Type Identification**  
 
@@ -165,6 +175,7 @@ In this section, we will:
 
 The complete execution steps and code can be found in the [07-clustering.md](./docs/07-clustering.md) document.
 
+---
 
 ### 9. **Visualization with UMAP/TSNE**  
    + Projecting high-dimensional scRNA-seq data into two dimensions for visual interpretation
@@ -180,6 +191,8 @@ This section demonstrates how to generate UMAP and t-SNE plots to aid in explora
 
 The corresponding code for this step is provided in [08-umap.md](./docs/08-umap.md).
 
+---
+
 ### 10. **Differential Expression Analysis**  
 
 Differential expression (DE) analysis allows for the identification of genes 
@@ -192,4 +205,5 @@ pathways, and cellular functions of interest.
 The execution code for performing DE analysis is available at [09-de-analysis.md](./docs/09-de-analysis.md), 
 which guides you through identifying marker genes and performing comparisons across different groups in your dataset.
 
-   
+---
+
