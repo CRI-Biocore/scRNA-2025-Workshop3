@@ -1,9 +1,9 @@
 # CRI Bioinformatics Core Workshop Series - 10x Genomics scRNA-seq data analysis workshop
 
-**This bioinformatics learning series, hosted by the CRI Bioinformatics Core, provides a comprehensive, 
-hands-on introduction to single-cell RNA sequencing (scRNA-seq) data analysis. 
-Participants will be guided through each step of the typical scRNA-seq workflow using widely adopted tools 
-such as 10x Genomics cellranger, seurat, and DoubletDecon.**
+**This hands-on workshop series, organized by the CRI Bioinformatics Core, 
+offers a practical and comprehensive introduction to single-cell RNA sequencing (scRNA-seq) data analysis. 
+Participants will work through each step of a typical scRNA-seq workflow using widely used tools 
+such as 10x Genomics Cell Ranger, DoubletDecon, and Seurat.**
 
 **This workshop will cover the topics listed below. 
 You can access the presentation slides by [downloading Workshop Slides (PDF)](./docs/Presentation_June2025_scRNAseq.pdf) **
@@ -14,17 +14,20 @@ or by emailing me at yli22@bsd.uchicago.edu.
 
 ### 1. High Performance Computing (HPC)
 
-CRI provides access to its high-performance computing (HPC) system, randi, for all registered participants in today's workshop training session. 
-The complete computational environment has been pre-configured on randi to support scRNA-seq data pre-processing, quality control, 
+CRI provides access to its high-performance computing (HPC) system, `randi`, for all registered participants in today's workshop training session. 
+The complete computational environment has been pre-configured on `randi` to support scRNA-seq data pre-processing, quality control, 
 and downstream analysis.
 
-To access randi, use the SSH command below with your assigned BSDID and password:
+To access `randi`, use the SSH command below with your assigned BSDID and password:
 
 ```
 ssh your_username@randi.cri.uchicago.edu
 ```
 
-After logging in successfully, you should see a screen similar to the following:
+Typically, your username for randi access is your BSDID. 
+If you don’t have one, please contact us so we can sponsor a temporary BSDID for your exploration.
+
+Once you've logged in successfully, you should see a screen similar to the one below:
 ![Login Screenshot](./images/randi-login-screenshot.png)
 
 **💬 CRI HPC Randi Support**
@@ -63,27 +66,31 @@ It captures thousands to tens of thousands of individual cells per run, isolatin
 1. **Sample Preparation:** Generate a single-cell suspension from tissue or culture.
 2. **Chromium Partitioning:** Cells are encapsulated in droplets with barcoded beads.
 3. **Reverse Transcription:** Transcripts are barcoded and converted to cDNA inside droplets.
-4. **Library Construction:** Amplification and preparation for Illumina
+4. **Library Construction:** Amplification and preparation for Illumina sequencing. 
 
 
 ### 3. **biocore scRNA-seq Data Analysis Workflow**
 
-This section outlines the complete computational pipeline used by the CRI Bioinformatics Core 
-for single-cell RNA-seq analysis—from raw sequencing data to downstream interpretation and visualization.
+This section outlines the complete computational pipeline implemented by the CRI Bioinformatics Core 
+for single-cell RNA-seq analysis, encompassing all steps from raw sequencing data processing to 
+downstream interpretation and visualization.
 
 ![](./images/scRNA-biocore-workflow.png)
 
 
 ### 4. **Cell Ranger Overview for Single-Cell RNA-seq Data Pre-processing**
 
-To begin single-cell RNA-seq data analysis using the 10x Genomics platform, raw sequencing data 
-must first be processed with **Cell Ranger**, a comprehensive software suite developed by 10x Genomics. 
-After installing Cell Ranger, users must also download the appropriate **reference transcriptome package**, 
-which is essential for aligning reads and assigning them to annotated genes. To run Cell Ranger successfully, 
-both the **software** and the appropriate **reference genome** must be installed on your system.
+To initiate single-cell RNA-seq data analysis using the 10x Genomics platform, raw sequencing data 
+must first be processed with **Cell Ranger**, a comprehensive software suite developed by 10x Genomics, 
+available at [https://www.10xgenomics.com/support/software/cell-ranger/downloads](https://www.10xgenomics.com/support/software/cell-ranger/downloads).
 
-- For instructions on **installing Cell Ranger**, refer to the **[installation guide](./docs/01-cellranger-installation.md)**.
-- For details on **downloading and setting up reference genome files**, see the **[reference genome setup guide](./docs/02-cellranger-refGenome.md)**.
+To run Cell Ranger successfully, 
+both the **software** and the appropriate **reference genome** must be installed on your system.
+After installing Cell Ranger, users must also download the appropriate **reference transcriptome package**, 
+which is essential for aligning reads and assigning them to annotated genes. 
+
+- For step-by-step instructions on installing **installing Cell Ranger**, see the **[installation guide (01-cellranger-installation.md)](./docs/01-cellranger-installation.md)**.
+- For guidance on **downloading and configuring reference genome files**, refer to the **[reference genome setup guide (02-cellranger-refGenome.md)](./docs/02-cellranger-refGenome.md)**.
 
 Additionally, cell Ranger offers a collection of tools designed for various stages of data processing and analysis:
 

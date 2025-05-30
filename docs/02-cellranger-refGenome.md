@@ -1,70 +1,77 @@
-# Cell Ranger Reference Genome Installation Guide
+## Cell Ranger Reference Genome Installation Guide
 
-To enable read alignment and quantification, `cellranger` requires an appropriate reference genome file. 
-10x Genomics provides pre-built reference packages for common species such as human and mouse.
+To enable read alignment and quantification, `cellranger` requires an appropriate reference genome file 
+to run `cell ranger` for `count` / `multi`. 
 
-In this tutorial, all test data come from **human samples**, so we will demonstrate how to install 
-the human reference genome for use with `cellranger` only.
+10x Genomics provides pre-built reference packages for common species including human and mouse.
 
 > **Note:** For multiome analysis using `cellranger-arc`, 
 a different reference package is required. That installation is not covered in this document.
 
 ---
 
-## 📦 Cell Ranger Reference for `count` / `multi`
+### 📦 1 Huamn Reference Genome
 
 The current human genome reference version recommended for use with `cellranger` is:
 
-- **Human reference (GRCh38) – 2020-A**
+- **Human reference (GRCh38) – 2024-A**
 
-### 🔽 Download
+#### 🔽 1.1 Download
 
 Run the following command to download the reference package:
 
 ```bash
-wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2020-A.tar.gz
+wget "https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2024-A.tar.gz"
 ```
 
-### 📂 Extract
+#### 📂 1.2 Extract
 
 After downloading, extract the contents:
 
 ```bash
-tar -xzvf refdata-gex-GRCh38-2020-A.tar.gz
+tar -xzvf refdata-gex-GRCh38-2024-A.tar.gz
 ```
 
-You will then have a directory (e.g., `refdata-gex-GRCh38-2020-A`) containing the pre-built genome index and gene annotation. This directory can be passed to `cellranger` commands using the `--transcriptome` option.
+You will then have a directory (e.g., `refdata-gex-GRCh38-2024-A`) containing the pre-built genome index and gene annotation. 
+This directory can be passed to `cellranger` commands using the `--transcriptome` option.
+
+---
+
+### 2. Mouse Reference Genome
+
+The current mouse genome reference version recommended for use with `cellranger` is:
+
+- **Mouse reference (GRCm38) – 2024-A**
+
+#### 🔽 2.1 Download
+
+Run the following command to download the reference package:
+
+```bash
+wget "https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCm39-2024-A.tar.gz"
+```
+
+#### 📂 2.2 Extract
+
+After downloading, extract the contents:
+
+```bash
+tar -xzvf refdata-gex-GRCm39-2024-A.tar.gz
+```
+
+As with the human reference, you will have a directory (e.g., `refdata-gex-GRCm39-2024-A`) that can be used in 
+`cellranger count` or `cellranger multi`.
 
 ---
 
 ✅ After downloading and extracting the reference files, you are ready to proceed with data processing using `cellranger`.
 
-➡️ For step-by-step instructions on running `cellranger count`, refer to [03-cellranger-count.md](./03-cellranger-count.md).
+➡️ For step-by-step instructions on running `cellranger count`, refer to the next section [03-cellranger-count.md](./03-cellranger-count.md).
 
 ---
+### 3 `randi HPC` installed cell ranger human reference genome
 
-### Mouse Reference Genome
-
-The current mouse genome reference version recommended for use with `cellranger` is:
-
-- **Mouse reference (GRCm38) – 2020-A**
-
-#### 🔽 Download
-
-Run the following command to download the reference package:
-
-```bash
-wget https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCm38-2020-A.tar.gz
-```
-
-#### 📂 Extract
-
-After downloading, extract the contents:
-
-```bash
-tar -xzvf refdata-gex-GRCm38-2020-A.tar.gz
-```
-
-As with the human reference, you will have a directory (e.g., `refdata-gex-GRCm38-2020-A`) that can be used in `cellranger count` or `cellranger multi`.
-
+In this tutorial, all test data come from **human samples**, only the human reference genome is installed on `randi`, 
+it is accessible at `/gpfs/data/biocore-workshop/scRNA-seq_2025_workshop3/module_tools/refdata-gex-GRCh38-2024-A` 
+as shown in ![below screenshot](./images/human_ref_folder.png).
 
