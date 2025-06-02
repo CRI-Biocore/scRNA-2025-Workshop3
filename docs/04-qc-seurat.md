@@ -1,6 +1,27 @@
 # 04 - QC with Seurat
 
-This document outlines the basic steps to construct a Seurat object from 10x Genomics data and perform quality control filtering based on mitochondrial content and gene/UMI thresholds.
+This document outlines the basic steps to construct a Seurat object from 10x Genomics data 
+and perform quality control filtering based on mitochondrial content and gene/UMI thresholds.
+
+## Step 1: Accessing the Pre-installed R Environment on randi HPC
+
+To launch the pre-installed R environment with the required packages on `randi`, use the following command:
+
+```bash
+/gpfs/data/biocore-workshop/scRNA-seq_2025_workshop3/module_tools/workshop3_env/bin/R
+```
+After executing this command, you should see an R session start with output similar to the example below:
+
+![](./images/R_evn.png)
+
+Once the R session has started, load the required computational packages using the commands below:
+
+```r
+library(Seurat)
+library(ggplot2)
+```
+
+![](./images/R_evn2.png)
 
 ## Step 1: Set Up Seurat Object
 

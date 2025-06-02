@@ -460,10 +460,10 @@ is essential for aligning reads and assigning them to annotated
 genes.</p>
 <ul>
 <li>For step-by-step instructions on installing <strong>installing Cell
-Ranger</strong>, see the <strong><a href="./docs/01-cellranger-installation.md">section 1: installation
+Ranger</strong>, see the <strong><a href="./docs/01-cellranger-installation.md">Section 1: installation
 guide (01-cellranger-installation.md)</a></strong>.</li>
 <li>For guidance on <strong>downloading and configuring reference genome
-files</strong>, refer to the <strong><a href="./docs/02-cellranger-refGenome.md">section 2: reference genome
+files</strong>, refer to the <strong><a href="./docs/02-cellranger-refGenome.md">Section 2: reference genome
 setup guide (02-cellranger-refGenome.md)</a></strong>.</li>
 </ul>
 <p>Additionally, cell Ranger offers a collection of tools designed for
@@ -524,8 +524,8 @@ instead of genes.tsv</p>
 Seurat tutorials or demonstrations</p></li>
 </ul>
 <p>For a step-by-step walk through of running
-<strong><code>cellranger count</code></strong>, visit the <strong><a href="./docs/03-cellranger-count.md">section 3: cellranger count
-execution guide</a></strong>.</p>
+<strong><code>cellranger count</code></strong>, visit the <strong><a href="./docs/03-cellranger-count.md">Section 3: cellranger count
+execution guide (03-cellranger-count.md)</a></strong>.</p>
 <hr />
 </div>
 </div>
@@ -544,8 +544,18 @@ downstream single-cell RNA-seq analysis.</p>
 <li>Filtering low-quality cells based on gene and UMI thresholds</li>
 <li>Visualizing quality control metrics</li>
 </ol>
-<p>The detailed execution guide for these steps is provided in this <a href="./docs/04-qc-seurat.md">section 4: processing count
-matrix</a>.</p>
+<p>The detailed execution guide for these steps is provided in this
+<strong><a href="./docs/04-qc-seurat.md">Section 4: processing count
+matrix (04-qc-seurat.md)</a></strong>.</p>
+<blockquote>
+<p><strong>Note:</strong> High-Performance Computing (HPC) environments
+typically lack a graphical user interface (GUI), so interactive plots or
+visual outputs from RStudio cannot be displayed directly during
+execution. As a result, if you would like to view the plots, please run
+the corresponding code locally on your own machine with the required
+packages, such as Seurat, installed. This will allow you to fully
+explore and visualize the results.</p>
+</blockquote>
 <hr />
 </div>
 <div id="detecting-doublets-with-doubletdecon" class="section level3">
@@ -562,7 +572,8 @@ detection strategies. The results from both methods can be used to
 update the Seurat object by adding a doublet metadata column and
 subsetting only the high-confidence singlet cells for further
 analysis.</p>
-<p>The execution code for this step is detailed in the <a href="./docs/05-doublets.md">05-doublets.md</a> file.</p>
+<p>The execution code for this step is detailed in the <strong><a href="./docs/05-doublets.md">Section 5: doublets detection
+(05-doublets.md)</a></strong> file.</p>
 <hr />
 </div>
 <div id="seurat-object-normalization-and-multi-sample-integration" class="section level3">
@@ -580,7 +591,8 @@ Multiple Samples</strong> using anchor-based integration, which aligns
 shared cell types across datasets.</p>
 <p>These steps enable downstream analyses such as clustering,
 differential expression, and trajectory inference across combined
-datasets. The execution code is accessible at <a href="./docs/06-normalization-integration.md">06-normalization-integration.md</a></p>
+datasets. The execution code is accessible at <strong><a href="./docs/06-normalization-integration.md">Section 6: Normalization
+and Integration (06-normalization-integration.md)</a></strong></p>
 <hr />
 </div>
 <div id="clustering-and-cell-type-identification" class="section level3">
@@ -600,7 +612,8 @@ reduction</li>
 clustering</li>
 <li>Visualize the identified clusters using UMAP and t-SNE</li>
 </ol>
-<p>The complete execution steps and code can be found in the <a href="./docs/07-clustering.md">07-clustering.md</a> document.</p>
+<p>The complete execution steps and code can be found in the <strong><a href="./docs/07-clustering.md">Section 7: Clustering Analysis
+(07-clustering.md)</a></strong> document.</p>
 <hr />
 </div>
 <div id="visualization-with-umaptsne" class="section level3">
@@ -619,7 +632,8 @@ space based on their gene expression profiles, allowing easy
 identification of distinct clusters, gradients, and outliers. This
 section demonstrates how to generate UMAP and t-SNE plots to aid in
 exploratory data analysis and presentation.</p>
-<p>The corresponding code for this step is provided in <a href="./docs/08-umap.md">08-umap.md</a>.</p>
+<p>The corresponding code for this step is provided in <strong><a href="./docs/08-umap.md">Section 8: Dimensionality Reduction Analysis
+(08-umap.md)</a></strong>.</p>
 <hr />
 </div>
 <div id="differential-expression-analysis" class="section level3">
@@ -632,9 +646,11 @@ populations and for identifying marker genes associated with specific
 biological states. By comparing gene expression across clusters or
 conditions, DE analysis helps reveal key biomarkers, pathways, and
 cellular functions of interest.</p>
-<p>The execution code for performing DE analysis is available at <a href="./docs/09-de-analysis.md">09-de-analysis.md</a>, which guides you
-through identifying marker genes and performing comparisons across
-different groups in your dataset.</p>
+<p>The execution code for performing DE analysis is available at
+<strong><a href="./docs/09-de-analysis.md">Section 9: DE Analysis
+(09-de-analysis.md)</a></strong>, which guides you through identifying
+marker genes and performing comparisons across different groups in your
+dataset.</p>
 <hr />
 </div>
 </div>

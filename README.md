@@ -92,8 +92,8 @@ both the **software** and the appropriate **reference genome** must be installed
 After installing Cell Ranger, users must also download the appropriate **reference transcriptome package**, 
 which is essential for aligning reads and assigning them to annotated genes. 
 
-- For step-by-step instructions on installing **installing Cell Ranger**, see the **[section 1: installation guide (01-cellranger-installation.md)](./docs/01-cellranger-installation.md)**.
-- For guidance on **downloading and configuring reference genome files**, refer to the **[section 2: reference genome setup guide (02-cellranger-refGenome.md)](./docs/02-cellranger-refGenome.md)**.
+- For step-by-step instructions on installing **installing Cell Ranger**, see the **[Section 1: installation guide (01-cellranger-installation.md)](./docs/01-cellranger-installation.md)**.
+- For guidance on **downloading and configuring reference genome files**, refer to the **[Section 2: reference genome setup guide (02-cellranger-refGenome.md)](./docs/02-cellranger-refGenome.md)**.
 
 Additionally, cell Ranger offers a collection of tools designed for various stages of data processing and analysis:
 
@@ -135,7 +135,7 @@ it includes 2 test data files to support 2 different stages of the single-cell R
 
     part2_demo.rds: A pre-processed RDS object for use in downstream Seurat tutorials or demonstrations
 
-For a step-by-step walk through of running **`cellranger count`**, visit the **[section 3: cellranger count execution guide](./docs/03-cellranger-count.md)**.
+For a step-by-step walk through of running **`cellranger count`**, visit the **[Section 3: cellranger count execution guide (03-cellranger-count.md)](./docs/03-cellranger-count.md)**.
 
 ---
 
@@ -152,7 +152,12 @@ This section covers the following key steps:
 3. Filtering low-quality cells based on gene and UMI thresholds
 4. Visualizing quality control metrics
 
-The detailed execution guide for these steps is provided in this [section 4: processing count matrix](./docs/04-qc-seurat.md).
+The detailed execution guide for these steps is provided in this **[Section 4: processing count matrix (04-qc-seurat.md)](./docs/04-qc-seurat.md)**.
+
+> **Note:** High-Performance Computing (HPC) environments typically lack a graphical user interface (GUI), 
+so interactive plots or visual outputs from RStudio cannot be displayed directly during execution. 
+As a result, if you would like to view the plots, please run the corresponding code locally on your own machine 
+with the required packages, such as Seurat, installed. This will allow you to fully explore and visualize the results.
 
 ---
 
@@ -168,7 +173,7 @@ identify and filter doublets through both **centroid** and **medoid-based** dete
 The results from both methods can be used to update the Seurat object by adding a doublet metadata 
 column and subsetting only the high-confidence singlet cells for further analysis.
 
-The execution code for this step is detailed in the [05-doublets.md](./docs/05-doublets.md) file.
+The execution code for this step is detailed in the **[Section 5: doublets detection (05-doublets.md)](./docs/05-doublets.md)** file.
 
 ---
 
@@ -183,7 +188,7 @@ This section describes two main processes:
 2. **Integration of Multiple Samples** using anchor-based integration, which aligns shared cell types across datasets.
 
 These steps enable downstream analyses such as clustering, differential expression, 
-and trajectory inference across combined datasets. The execution code is accessible at [06-normalization-integration.md](./docs/06-normalization-integration.md)
+and trajectory inference across combined datasets. The execution code is accessible at **[Section 6: Normalization and Integration (06-normalization-integration.md)](./docs/06-normalization-integration.md)**
 
 ---
 
@@ -201,7 +206,7 @@ In this section, we will:
 3. Construct a shared nearest neighbor graph and perform clustering
 4. Visualize the identified clusters using UMAP and t-SNE
 
-The complete execution steps and code can be found in the [07-clustering.md](./docs/07-clustering.md) document.
+The complete execution steps and code can be found in the **[Section 7: Clustering Analysis (07-clustering.md)](./docs/07-clustering.md)** document.
 
 ---
 
@@ -217,7 +222,7 @@ They project cells into a 2D space based on their gene expression profiles,
 allowing easy identification of distinct clusters, gradients, and outliers. 
 This section demonstrates how to generate UMAP and t-SNE plots to aid in exploratory data analysis and presentation.  
 
-The corresponding code for this step is provided in [08-umap.md](./docs/08-umap.md).
+The corresponding code for this step is provided in **[Section 8: Dimensionality Reduction Analysis (08-umap.md)](./docs/08-umap.md)**.
 
 ---
 
@@ -230,7 +235,7 @@ for identifying marker genes associated with specific biological states.
 By comparing gene expression across clusters or conditions, DE analysis helps reveal key biomarkers, 
 pathways, and cellular functions of interest. 
 
-The execution code for performing DE analysis is available at [09-de-analysis.md](./docs/09-de-analysis.md), 
+The execution code for performing DE analysis is available at **[Section 9: DE Analysis (09-de-analysis.md)](./docs/09-de-analysis.md)**, 
 which guides you through identifying marker genes and performing comparisons across different groups in your dataset.
 
 ---
