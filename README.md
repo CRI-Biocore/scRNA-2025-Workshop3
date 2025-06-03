@@ -166,7 +166,7 @@ and trajectory inference across combined datasets. The execution code is accessi
 
 ---
 
-### 6. **Clustering and Cell Type Identification**  
+### 6. **Scaling and Clustering Analysis**  
 
 Following data integration, the next phase involves unsupervised clustering 
 to group cells with similar gene expression patterns. This step is critical for 
@@ -178,7 +178,7 @@ In this section, we will:
 1. Scale the integrated Seurat object to standardize expression values
 2. Apply Principal Component Analysis (PCA) for dimensionality reduction
 3. Construct a shared nearest neighbor graph and perform clustering
-4. Visualize the identified clusters using UMAP and t-SNE
+4. Clustering analysis using UMAP and t-SNE
 
 The complete execution steps and code can be found in the **[Section 6: Clustering Analysis (06-clustering.md)](./docs/06-clustering.md)** document.
 
@@ -196,7 +196,7 @@ They project cells into a 2D space based on their gene expression profiles,
 allowing easy identification of distinct clusters, gradients, and outliers. 
 This section demonstrates how to generate UMAP and t-SNE plots to aid in exploratory data analysis and presentation.  
 
-The corresponding code for this step is provided in **[Section 8: Dimensionality Reduction Analysis (07-umap.md)](./docs/07-umap.md)**.
+The corresponding code for this step is provided in **[Section 7: Dimensionality Reduction Analysis (07-umap.md)](./docs/07-umap.md)**.
 
 ---
 
@@ -209,7 +209,7 @@ for identifying marker genes associated with specific biological states.
 By comparing gene expression across clusters or conditions, DE analysis helps reveal key biomarkers, 
 pathways, and cellular functions of interest. 
 
-The execution code for performing DE analysis is available at **[Section 9: DE Analysis (08-de-analysis.md)](./docs/08-de-analysis.md)**, 
+The execution code for performing DE analysis is available at **[Section 8: DE Analysis (08-de-analysis.md)](./docs/08-de-analysis.md)**, 
 which guides you through identifying marker genes and performing comparisons across different groups in your dataset.
 
 ---

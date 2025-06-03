@@ -1,4 +1,4 @@
-# 08. Visualization with UMAP/TSNE
+# Section 7: Clustering Results Visualizations with UMAP/TSNE
 
 This section provides code to visualize integrated and clustered single-cell data using UMAP and t-SNE, 
 along with violin plots for metadata-based quality control.
@@ -6,8 +6,13 @@ along with violin plots for metadata-based quality control.
 ## Dimensionality Reduction Plots
 
 ```r
+seuratObj.int <- readRDS(file = '/gpfs/data/biocore-workshop/scRNA-seq_2025_workshop3/testData/data2_seurat/part2_demo.rds')
 # UMAP and t-SNE plots to visualize clusters
+pdf(file = file.path(getwd(), 'integratedSamp_umap.pdf'), width = 4, height = 3)
 DimPlot(seuratObj.int, reduction = "umap")
+dev.off()
+
+
 DimPlot(seuratObj.int, reduction = "tsne")
 
 # Split view by experimental condition

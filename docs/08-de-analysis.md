@@ -1,4 +1,4 @@
-# Differential Expression Analysis
+# Section 8: Differential Expression Analysis
 
 Differential expression (DE) analysis identifies genes that are differentially expressed across different conditions, clusters, or populations. This section walks through the process of performing DE analysis using Seurat’s built-in functions.
 

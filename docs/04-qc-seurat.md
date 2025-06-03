@@ -1,4 +1,4 @@
-# 04 - QC with Seurat
+# Section 4: QC Processing with Seurat
 
 This document outlines the basic steps to construct a Seurat object from 10x Genomics data 
 and perform quality control filtering based on mitochondrial content and gene/UMI thresholds.
@@ -63,6 +63,7 @@ You should then see output similar to the following from the computation.
 
 ```r
 seurat1.filter <- subset(seurat1, subset = nFeature_RNA > 200 & percent.mt < 20)
+print(seurat1.filter)
 ```
 
 These steps help ensure the dataset includes high-quality cells suitable for downstream analysis. 
