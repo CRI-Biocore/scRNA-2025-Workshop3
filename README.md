@@ -224,7 +224,7 @@ They project cells into a 2D space based on their gene expression profiles,
 allowing easy identification of distinct clusters, gradients, and outliers. 
 This section demonstrates how to generate UMAP and t-SNE plots to aid in exploratory data analysis and presentation.  
 
-The corresponding code for this step is provided in **[Section 7: Dimensionality Reduction Analysis (07-umap.md)](./docs/07-umap.md)**.
+The corresponding code for this step is provided in **[Section 7: Dimensionality Reduction Analysis (07-umap.md)](./docs/07-umap.html)**.
 
 ---
 
