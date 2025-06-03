@@ -12,17 +12,22 @@ pdf(file = file.path(getwd(), 'integratedSamp_umap.pdf'), width = 4, height = 3)
 DimPlot(seuratObj.int, reduction = "umap")
 dev.off()
 
-
+pdf(file = file.path(getwd(), 'integratedSamp_tsne.pdf'), width = 4, height = 3)
 DimPlot(seuratObj.int, reduction = "tsne")
+dev.off()
 
 # Split view by experimental condition
+pdf(file = file.path(getwd(), 'integratedSamp_umap_sampSep.pdf'), width = 4, height = 3)
 DimPlot(seuratObj.int, reduction = "umap", split.by = 'expCond2')
+dev.off()
 
 # Grouped and split view of UMAP
+pdf(file = file.path(getwd(), 'integratedSamp_umap_sampSep2.pdf'), width = 4, height = 3)
 DimPlot(seuratObj.int, reduction = "umap", group.by = 'expCond3', split.by = 'expCond1')
-
+dev.off()
 ```
 
+<!--
 ## Violin Plots on Metadata Information
 
 ```R
@@ -35,3 +40,4 @@ VlnPlot(seuratObj.int, features = c("nFeature_RNA", "nCount_RNA", "percent.mt", 
         pt.size = 0, ncol = 4, group.by = 'expCond3')
 
 ```
+-->
