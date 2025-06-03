@@ -1,10 +1,10 @@
-# Section 6: Normalization, Scaling, and Clustering for Integrated Multi-sample Data 
+# Section 6: Scaling, and Clustering for Integrated Multi-sample Data 
 
 Similarly to the analysis performed on individual samples previously as shown in the below workflow
 
 ![](./images/seurat_norm_clustering_workflow.png)
 
-The integrated object is ready for downstream analysis steps, as outlined below:
+**The integrated object is ready for downstream analysis steps, as outlined below:**
 
 ```r
 # Step 1: Rescale the integrated Seurat object
@@ -26,5 +26,5 @@ seuratObj.int <- RunUMAP(seuratObj.int, reduction = "pca", dims = 1:20)
 seuratObj.int <- RunTSNE(object = seuratObj.int, dims = 1:20)
 ```
 
-The analysis steps should complete within several minutes.
+> **Note:** The analysis steps should complete within several minutes.
 

@@ -5,10 +5,34 @@ offers a practical and comprehensive introduction to single-cell RNA sequencing 
 Participants will work through each step of a typical scRNA-seq workflow using widely used tools 
 such as 10x Genomics Cell Ranger, DoubletDecon, and Seurat.**
 
-**This workshop will cover the topics listed below. 
-You can access the presentation slides by [downloading Workshop Slides (PDF)](./docs/Presentation_June2025_scRNAseq.pdf) **
 
-Please share your feedback on topics you'd like to see covered, or any questions you have 
+
+### 🔬 Workshop Agenda: Introduction to scRNA-seq Data Analysis
+
+This workshop will guide participants through the essential steps of single-cell RNA-seq analysis 
+using 10X Genomics data and CRI's HPC resources. 
+It will primarily focus on a series of foundational, hands-on sessions designed to introduce practical approaches 
+to scRNA-seq analysis.
+
+- **1. 🧪 Introduction to CRI's HPC Environment (randi)**
+  - Learn how to access and log into CRI's randi HPC
+- **2. Overview to 10X Genomics scRNA-seq Technology  **
+- **3. Overview of Cell Ranger Pipeline  **
+- **4. 🧪 Hands-on: Running Cell Ranger `count` Command  **
+- **5. 🧪 Hands-on: Quality Control and Pre-processing of Count Matrix  **
+   - Filtering, metrics evaluation, and initial exploration
+- **6. 🧪 Hands-on: Normalization and Clustering of Individual Samples  **
+   - Seurat-based pipeline to process each sample separately
+- **7. 🧪 Hands-on: Integration of Multiple Samples  **
+   - Combining datasets for cross-condition comparison
+- **8. 🧪 Hands-on: Normalization and Clustering on Integrated Data  **
+   - Standardizing and analyzing the merged dataset
+- **9. 🧪 Hands-on: Dimensionality Reduction and Visualization  **
+   - Using UMAP and t-SNE to visualize cell populations
+- **10. 🧪 Hands-on: Differential Expression Analysis  **
+   - Identify genes that differ between clusters or conditions
+
+> **Note:** Please share your feedback on topics you'd like to see covered, or any questions you have 
 for our workshop learning series, either through [this survey link](https://mycri.cri.uchicago.edu/educations/trainings/77/survey/) 
 or by emailing me at yli22@bsd.uchicago.edu.
 
@@ -31,6 +55,8 @@ If you don’t have one, please contact us so we can sponsor a temporary BSDID f
 
 Once you've logged in successfully, you should see a screen similar to the one below:
 ![Login Screenshot](./images/randi-login-screenshot.png)
+
+---
 
 **💬 CRI HPC Randi Support**
 
@@ -97,6 +123,8 @@ Additionally, cell Ranger offers a collection of tools designed for various stag
 In this workflow, we primarily focus on **`cellranger count`**, which serves as 
 the foundational step for converting raw sequencing reads into interpretable, cell-level gene expression matrices 
 used in downstream analyses such as clustering, differential expression, and cell type annotation with seurat. 
+
+---
 
 #### Workshop Test Dataset Overview
 
