@@ -184,23 +184,7 @@ The complete execution steps and code can be found in the **[Section 6: Clusteri
 
 ---
 
-### 7. **Detecting Doublets with DoubletDecon** 
-
-Doublets or multiplets—instances where two or more cells are captured within a single droplet—can confound 
-single-cell RNA-seq analysis by producing hybrid gene expression profiles. 
-Detecting and removing these artifacts is essential for ensuring the accuracy of downstream analyses 
-such as clustering, differential expression, and lineage inference.
-
-This section demonstrates how to use the **DoubletDecon** R package to 
-identify and filter doublets through both **centroid** and **medoid-based** detection strategies. 
-The results from both methods can be used to update the Seurat object by adding a doublet metadata 
-column and subsetting only the high-confidence singlet cells for further analysis.
-
-The execution code for this step is detailed in the **[Section 7: doublets detection (07-doublets.md)](./docs/07-doublets.md)** file.
-
----
-
-### 8. **Visualization with UMAP/TSNE**  
+### 7. **Visualization with UMAP/TSNE**  
    + Projecting high-dimensional scRNA-seq data into two dimensions for visual interpretation
 
 
@@ -212,11 +196,11 @@ They project cells into a 2D space based on their gene expression profiles,
 allowing easy identification of distinct clusters, gradients, and outliers. 
 This section demonstrates how to generate UMAP and t-SNE plots to aid in exploratory data analysis and presentation.  
 
-The corresponding code for this step is provided in **[Section 8: Dimensionality Reduction Analysis (08-umap.md)](./docs/08-umap.md)**.
+The corresponding code for this step is provided in **[Section 8: Dimensionality Reduction Analysis (07-umap.md)](./docs/07-umap.md)**.
 
 ---
 
-### 9. **Differential Expression Analysis**  
+### 8. **Differential Expression Analysis**  
 
 Differential expression (DE) analysis allows for the identification of genes 
 that are differentially expressed between clusters, experimental conditions, or cell types. 
@@ -225,12 +209,12 @@ for identifying marker genes associated with specific biological states.
 By comparing gene expression across clusters or conditions, DE analysis helps reveal key biomarkers, 
 pathways, and cellular functions of interest. 
 
-The execution code for performing DE analysis is available at **[Section 9: DE Analysis (09-de-analysis.md)](./docs/09-de-analysis.md)**, 
+The execution code for performing DE analysis is available at **[Section 9: DE Analysis (08-de-analysis.md)](./docs/08-de-analysis.md)**, 
 which guides you through identifying marker genes and performing comparisons across different groups in your dataset.
 
 ---
 
-### 10. **biocore scRNA-seq Data Analysis Workflow**
+### 9. **biocore scRNA-seq Data Analysis Workflow**
 
 The outline above presents a basic single-cell RNA-seq (scRNA-seq) analysis workflow.
 In practice, scRNA-seq data analysis involves more complex challenges and additional steps to ensure accurate results.
@@ -249,4 +233,21 @@ If you are interested in our services, please contact us at bioinformatics@bsd.u
 Additionally, you can also submit a project request directly via [https://mycri.cri.uchicago.edu/](https://mycri.cri.uchicago.edu/) to initiate the analysis.
 
 ---
+<!--
+### 10. **Detecting Doublets with DoubletDecon** 
+
+Doublets or multiplets—instances where two or more cells are captured within a single droplet—can confound 
+single-cell RNA-seq analysis by producing hybrid gene expression profiles. 
+Detecting and removing these artifacts is essential for ensuring the accuracy of downstream analyses 
+such as clustering, differential expression, and lineage inference.
+
+This section demonstrates how to use the **DoubletDecon** R package to 
+identify and filter doublets through both **centroid** and **medoid-based** detection strategies. 
+The results from both methods can be used to update the Seurat object by adding a doublet metadata 
+column and subsetting only the high-confidence singlet cells for further analysis.
+
+The execution code for this step is detailed in the **[Section 10: doublets detection (9-doublets.md)](./docs/9-doublets.md)** file.
+-->
+
+
 
