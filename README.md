@@ -71,17 +71,7 @@ It captures thousands to tens of thousands of individual cells per run, isolatin
 
 ---
 
-### 3. **biocore scRNA-seq Data Analysis Workflow**
-
-This section outlines the complete computational pipeline implemented by the CRI Bioinformatics Core 
-for single-cell RNA-seq analysis, encompassing all steps from raw sequencing data processing to 
-downstream interpretation and visualization.
-
-![](./images/scRNA-biocore-workflow.png)
-
----
-
-### 4. **Cell Ranger Overview for Single-Cell RNA-seq Data Pre-processing**
+### 3. **Cell Ranger Overview for Single-Cell RNA-seq Data Pre-processing**
 
 To initiate single-cell RNA-seq data analysis using the 10x Genomics platform, raw sequencing data 
 must first be processed with **Cell Ranger**, a comprehensive software suite developed by 10x Genomics, 
@@ -139,7 +129,7 @@ For a step-by-step walk through of running **`cellranger count`**, visit the **[
 
 ---
 
-### 5. **Seurat Object Construction and Quality Control from Cell Ranger Outputs**  
+### 4. **Seurat Object Construction and Quality Control from Cell Ranger Outputs**  
 
 After processing raw sequencing data using the `cellranger count` pipeline, 
 the resulting **filtered feature-barcode matrix** can be imported into R using the **Seurat** package 
@@ -161,23 +151,7 @@ with the required packages, such as Seurat, installed. This will allow you to fu
 
 ---
 
-### 6. **Detecting Doublets with DoubletDecon** 
-
-Doublets or multiplets—instances where two or more cells are captured within a single droplet—can confound 
-single-cell RNA-seq analysis by producing hybrid gene expression profiles. 
-Detecting and removing these artifacts is essential for ensuring the accuracy of downstream analyses 
-such as clustering, differential expression, and lineage inference.
-
-This section demonstrates how to use the **DoubletDecon** R package to 
-identify and filter doublets through both **centroid** and **medoid-based** detection strategies. 
-The results from both methods can be used to update the Seurat object by adding a doublet metadata 
-column and subsetting only the high-confidence singlet cells for further analysis.
-
-The execution code for this step is detailed in the **[Section 5: doublets detection (05-doublets.md)](./docs/05-doublets.md)** file.
-
----
-
-### 7. **Seurat Object Normalization and Multi-Sample Integration**  
+### 5. **Seurat Object Normalization and Multi-Sample Integration**  
 
 After performing initial filtering and quality control on each sample, 
 the next step is to normalize the gene expression data and prepare for integration across multiple samples. 
@@ -188,11 +162,11 @@ This section describes two main processes:
 2. **Integration of Multiple Samples** using anchor-based integration, which aligns shared cell types across datasets.
 
 These steps enable downstream analyses such as clustering, differential expression, 
-and trajectory inference across combined datasets. The execution code is accessible at **[Section 6: Normalization and Integration (06-normalization-integration.md)](./docs/06-normalization-integration.md)**
+and trajectory inference across combined datasets. The execution code is accessible at **[Section 5: Normalization and Integration (05-normalization-integration.md)](./docs/06-normalization-integration.md)**
 
 ---
 
-### 8. **Clustering and Cell Type Identification**  
+### 6. **Clustering and Cell Type Identification**  
 
 Following data integration, the next phase involves unsupervised clustering 
 to group cells with similar gene expression patterns. This step is critical for 
@@ -206,11 +180,27 @@ In this section, we will:
 3. Construct a shared nearest neighbor graph and perform clustering
 4. Visualize the identified clusters using UMAP and t-SNE
 
-The complete execution steps and code can be found in the **[Section 7: Clustering Analysis (07-clustering.md)](./docs/07-clustering.md)** document.
+The complete execution steps and code can be found in the **[Section 6: Clustering Analysis (06-clustering.md)](./docs/06-clustering.md)** document.
 
 ---
 
-### 9. **Visualization with UMAP/TSNE**  
+### 7. **Detecting Doublets with DoubletDecon** 
+
+Doublets or multiplets—instances where two or more cells are captured within a single droplet—can confound 
+single-cell RNA-seq analysis by producing hybrid gene expression profiles. 
+Detecting and removing these artifacts is essential for ensuring the accuracy of downstream analyses 
+such as clustering, differential expression, and lineage inference.
+
+This section demonstrates how to use the **DoubletDecon** R package to 
+identify and filter doublets through both **centroid** and **medoid-based** detection strategies. 
+The results from both methods can be used to update the Seurat object by adding a doublet metadata 
+column and subsetting only the high-confidence singlet cells for further analysis.
+
+The execution code for this step is detailed in the **[Section 7: doublets detection (07-doublets.md)](./docs/07-doublets.md)** file.
+
+---
+
+### 8. **Visualization with UMAP/TSNE**  
    + Projecting high-dimensional scRNA-seq data into two dimensions for visual interpretation
 
 
@@ -226,7 +216,7 @@ The corresponding code for this step is provided in **[Section 8: Dimensionality
 
 ---
 
-### 10. **Differential Expression Analysis**  
+### 9. **Differential Expression Analysis**  
 
 Differential expression (DE) analysis allows for the identification of genes 
 that are differentially expressed between clusters, experimental conditions, or cell types. 
@@ -237,6 +227,26 @@ pathways, and cellular functions of interest.
 
 The execution code for performing DE analysis is available at **[Section 9: DE Analysis (09-de-analysis.md)](./docs/09-de-analysis.md)**, 
 which guides you through identifying marker genes and performing comparisons across different groups in your dataset.
+
+---
+
+### 10. **biocore scRNA-seq Data Analysis Workflow**
+
+The outline above presents a basic single-cell RNA-seq (scRNA-seq) analysis workflow.
+In practice, scRNA-seq data analysis involves more complex challenges and additional steps to ensure accurate results.
+
+This section details the full computational pipeline implemented by the CRI Bioinformatics Core for scRNA-seq analysis.
+The pipeline covers all stages—from raw sequencing data processing to downstream interpretation and visualization as shown below.
+
+![](./images/scRNA-biocore-workflow.png)
+
+Typically, a standard scRNA-seq analysis project from our core requires approximately 50 hours of computational time.
+In addition, we provide support for a wide range of sequencing data analyses, 
+including but not limited to bulk RNA-seq, ATAC-seq, multi-omics data, ChIP-seq, and more.
+We also assist both internal and external researchers with grant applications, manuscript preparation, and related research support.
+If you are interested in our services, please contact us at bioinformatics@bsd.uchicago.edu or me via yli22@bsd.uchicago.edu. 
+
+Additionally, you can also submit a project request directly via [https://mycri.cri.uchicago.edu/](https://mycri.cri.uchicago.edu/) to initiate the analysis.
 
 ---
 
