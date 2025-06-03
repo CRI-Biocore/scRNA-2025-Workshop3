@@ -162,7 +162,7 @@ This section describes two main processes:
 2. **Integration of Multiple Samples** using anchor-based integration, which aligns shared cell types across datasets.
 
 These steps enable downstream analyses such as clustering, differential expression, 
-and trajectory inference across combined datasets. The execution code is accessible at **[Section 5: Normalization and Integration (05-normalization-integration.md)](./docs/06-normalization-integration.md)**
+and trajectory inference across combined datasets. The execution code is accessible at **[Section 5: Normalization and Integration (05-normalization-integration.md)](./docs/05-normalization-integration.md)**
 
 ---
 
