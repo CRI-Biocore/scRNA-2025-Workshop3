@@ -3,7 +3,7 @@
 **This hands-on workshop series, organized by the CRI Bioinformatics Core, 
 offers a practical introduction to single-cell RNA sequencing (scRNA-seq) data analysis. 
 Participants will work through each step of a typical scRNA-seq workflow using widely used tools 
-such as 10x Genomics Cell Ranger, DoubletDecon, and Seurat.**
+such as 10x Genomics Cell Ranger and Seurat.**
 
 
 
