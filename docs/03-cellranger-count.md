@@ -22,12 +22,12 @@ cd workshop_test/
 cp /gpfs/data/biocore-workshop/scRNA-seq_2025_workshop3/run01_cellranger_count.slurm ./
 ```
 
-`testData1_count.slurm` is the SLURM file to be executed on Randi via `sbatch`. 
+`run01_cellranger_count.slurm` is the SLURM file to be executed on Randi via `sbatch`. 
 Depending on your operating system, you can use different tools to check and edit this file. 
 One way to do so is via the `vi` or `vim` command to check and edit this file. For example, to open the file in `vim`, run:
 
 ```bash
-vim testData1_count.slurm
+vim run01_cellranger_count.slurm
 ```
 
 The slurm contents are seen as below
@@ -61,7 +61,7 @@ In this case, it will process the sample name strating with prefix `AB-EL-HE-HE2
 Now, you can submit this SLURM job on `Randi` for Execution with the following command:
 
 ```bash
-sbatch testData1_count.slurm
+sbatch run01_cellranger_count.slurm
 ```
 
 ##### Check Submitted Jobs
