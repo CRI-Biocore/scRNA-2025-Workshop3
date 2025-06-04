@@ -1,7 +1,5 @@
----
-title: "CRI Bioinformatics Core Workshop Series - 10x Genomics scRNA-seq data analysis workshop"
-date: 2025-06-04
----
+# CRI Bioinformatics Core Workshop Series - 10x Genomics scRNA-seq data analysis workshop
+### 📅 Date: June 3, 2025
 
 **This hands-on workshop series, organized by the CRI Bioinformatics Core, 
 offers a practical introduction to single-cell RNA sequencing (scRNA-seq) data analysis. 
