@@ -50,7 +50,7 @@ To access `randi`, use the SSH command below with your assigned BSDID and passwo
 ssh your_username@randi.cri.uchicago.edu
 ```
 
-Typically, your username for randi access is your BSDID. 
+Typically, your username for randi access is your **BSDID**. 
 If you don’t have one, please contact us so we can sponsor a temporary BSDID for your exploration.
 
 Once you've logged in successfully, you should see a screen similar to the one below:
@@ -259,6 +259,10 @@ We also assist both internal and external researchers with grant applications, m
 If you are interested in our services, please contact us at bioinformatics@bsd.uchicago.edu or me via yli22@bsd.uchicago.edu. 
 
 Additionally, you can also submit a project request directly via [https://mycri.cri.uchicago.edu/](https://mycri.cri.uchicago.edu/) to initiate the analysis.
+
+> **Note:** Please share your feedback on topics you'd like to see covered, or any questions you have 
+for our workshop learning series, either through [this survey link](https://mycri.cri.uchicago.edu/educations/trainings/77/survey/) 
+or by emailing me at yli22@bsd.uchicago.edu.
 
 ---
 <!--
