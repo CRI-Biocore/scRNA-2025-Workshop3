@@ -152,7 +152,7 @@ it includes 2 test data files to support 2 different stages of the single-cell R
 
     3396A, 3396F: Output in compressed format (*.tsv.gz, *.mtx.gz), following the newer 10x conventions using features.tsv.gz instead of genes.tsv
 
-    part2_demo.rds: A pre-processed RDS object for use in downstream Seurat tutorials or demonstrations
+    `seurat_obj_int_clustering_res.rds` and `seurat_obj_qc.RData`: A pre-processed RDS object for use in downstream Seurat tutorials or demonstrations
 
 For a step-by-step walk through of running **`cellranger count`**, visit the **[Section 3: cellranger count execution guide (03-cellranger-count.md)](./docs/03-cellranger-count.md)**.
 
