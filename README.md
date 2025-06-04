@@ -1,7 +1,7 @@
 # CRI Bioinformatics Core Workshop Series - 10x Genomics scRNA-seq data analysis workshop
 
 **This hands-on workshop series, organized by the CRI Bioinformatics Core, 
-offers a practical and comprehensive introduction to single-cell RNA sequencing (scRNA-seq) data analysis. 
+offers a practical introduction to single-cell RNA sequencing (scRNA-seq) data analysis. 
 Participants will work through each step of a typical scRNA-seq workflow using widely used tools 
 such as 10x Genomics Cell Ranger, DoubletDecon, and Seurat.**
 
